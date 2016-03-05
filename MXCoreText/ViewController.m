@@ -80,7 +80,7 @@
     UIImageView *imageView = [UIImageView new];
     [imageView setContentMode:UIViewContentModeScaleAspectFill];
     imageView.layer.masksToBounds = YES;
-    UIImage *image = [UIImage imageNamed:@"1348566359556.jpg"];
+    UIImage *image = [UIImage imageNamed:@"DSC_3840.jpg"];
     [imageView setImage:image];
     [imageView setSuppositionalSize:CGSizeMake(200, 100)];
     [view1 insertNode:imageView atPosition:40];
