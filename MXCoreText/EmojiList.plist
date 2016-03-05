@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>【微笑】</key>
+	<string>emo_im_angel</string>
+	<key>【舌头】</key>
+	<string>emo_im_tongue_sticking_out</string>
+	<key>【酷】</key>
+	<string>emo_im_cool</string>
+	<key>【哭泣】</key>
+	<string>emo_im_crying</string>
+	<key>【安卓】</key>
+	<string>android</string>
+</dict>
+</plist>
