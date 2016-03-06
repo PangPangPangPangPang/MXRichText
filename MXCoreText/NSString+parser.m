@@ -13,7 +13,7 @@ static NSRegularExpression *_tel_Expression = nil;
 static  NSString * _Nonnull _tel_Pattern = @"[0-9]{3}[0-9-]+";
 
 static NSRegularExpression *_emoji_Expression = nil;
-static  NSString * _Nonnull _emoji_Pattern = @"【.{1,2}】";
+static  NSString * _Nonnull _emoji_Pattern = @"\\[.{1,2}\\]";
 
 static NSDictionary *_emojiDictory = nil;
 
