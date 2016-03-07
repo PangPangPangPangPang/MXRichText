@@ -33,7 +33,7 @@
     [view1.layer setBorderColor:[UIColor grayColor].CGColor];
     [view1 setFrame:CGRectMake(10, 100, self.view.frame.size.width - 20, 400)];
     [view1 setFont:[UIFont systemFontOfSize:20]];
-    [view1 setLineSpace:10];
+    [view1 setLineSpace:5];
     [view1 setLineBreakMode:NSLineBreakByCharWrapping];
     view1.delegate = self;
     [self.view addSubview:view1];
