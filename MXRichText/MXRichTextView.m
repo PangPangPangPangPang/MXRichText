@@ -239,6 +239,11 @@ NSMutableAttributedString *replacementAttrString(){
     CTFrameGetLineOrigins(_frame, CFRangeMake(0, lineCount), lineOrigins);
 
     for (int i = 0; i < lineCount; i++) {
+        
+        if (_numberOfLines <= i && _numberOfLines != 0) {
+            return;
+        }
+        
         CTLineRef line = CFArrayGetValueAtIndex(lines, i);
         CGPoint lineOrigin = lineOrigins[i];
         CFArrayRef runs = CTLineGetGlyphRuns(line);
@@ -303,7 +308,7 @@ NSMutableAttributedString *replacementAttrString(){
 
 - (void)drawRect:(CGRect)rect
          context:(CGContextRef)ctx {
-    if (_numberOfLines == 0 && _nodes.count == 0) {
+    if (_numberOfLines == 0) {
         CTFrameDraw(_frame, ctx);
         return;
     }
@@ -314,6 +319,9 @@ NSMutableAttributedString *replacementAttrString(){
     CGPoint lineOrigins[lineCount];
     CTFrameGetLineOrigins(_frame, CFRangeMake(0, lineCount), lineOrigins);
     for (int index = 0; index < lineCount; index++) {
+        if (_numberOfLines <= index) {
+            return;
+        }
         CTLineRef lineRef = CFArrayGetValueAtIndex(lines, index);
         CGPoint lineOrigin = lineOrigins[index];
         CGContextSetTextPosition(ctx, lineOrigin.x, lineOrigin.y);
@@ -325,9 +333,19 @@ NSMutableAttributedString *replacementAttrString(){
 - (void)sizeToFit {
     [self generateAttributedString];
     CTFramesetterRef setter = CTFramesetterCreateWithAttributedString((CFMutableAttributedStringRef)_attributeString);
+    [self generateFrame:self.bounds];
     CFRange fitRange;
+    CFRange range = CFRangeMake(0, _attributeString.string.length);
+    CFArrayRef lines = CTFrameGetLines(_frame);
+    NSInteger lineCount = CFArrayGetCount(lines);
+    if (_numberOfLines > 0 && _numberOfLines < lineCount) {
+        CTLineRef line = CFArrayGetValueAtIndex(lines, _numberOfLines - 1);
+         CFRange temp = CTLineGetStringRange(line);
+        range = CFRangeMake(0, temp.length + temp.location);
+    }
+    
     CGSize size =  CTFramesetterSuggestFrameSizeWithConstraints(setter,
-                                                                CFRangeMake(0, _attributeString.string.length),
+                                                                range,
                                                                 NULL,
                                                                 CGSizeMake(self.bounds.size.width, CGFLOAT_MAX),
                                                                 &fitRange);

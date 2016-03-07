@@ -21,15 +21,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITextView *textView = [UITextView new];
-    [textView setFrame:CGRectMake(100, 100, 100, 100)];
-    [textView setBackgroundColor:[UIColor yellowColor]];
-    textView.delegate = self;
-//    [self.view addSubview:textView];
-    
-    
     view1 = [MXRichTextView new];
     [view1.layer setBorderWidth:0.5];
+    [view1 setBackgroundColor:[UIColor yellowColor]];
+    view1.numberOfLines = 5;
     [view1.layer setBorderColor:[UIColor grayColor].CGColor];
     [view1 setFrame:CGRectMake(10, 100, self.view.frame.size.width - 20, 400)];
     [view1 setFont:[UIFont systemFontOfSize:20]];
@@ -63,7 +58,6 @@
     [view3.layer setCornerRadius:5];
     view3.layer.masksToBounds = YES;
     [view1 insertNode:view3 atPosition:25];
-    [view1 sizeToFit];
     
     UILabel *view4 = [UILabel new];
     [view4 setTextColor:[UIColor whiteColor]];
@@ -85,6 +79,7 @@
     [imageView setSuppositionalSize:CGSizeMake(200, 100)];
     [view1 insertNode:imageView atPosition:40];
     [view1 sizeToFit];
+
 }
 
 - (void)MXRichTextViewTriggerLink:(MXLinkNode *)node {
