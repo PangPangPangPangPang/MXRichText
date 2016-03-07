@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "MXRichText"
   s.version      = "0.0.1"
-  s.summary      = "A RichText widget，support emoji、attachment、link"
+  s.summary      = "A RichText widget,support emoji、attachment、link."
   s.homepage     = "http://mmmmmax.wang"
   s.license      = "MIT"
   s.authors      = { 'Max' => '446964321@qq.com'}
