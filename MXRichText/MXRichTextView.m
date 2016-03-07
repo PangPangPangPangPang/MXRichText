@@ -38,19 +38,19 @@ NSMutableAttributedString *replacementAttrString(){
                                                                               0);
     CFAttributedStringReplaceString(attrString,
                                     CFRangeMake(0, 0),
-                                    (CFStringRef)_text);
+                                    (CFStringRef)_attributeString.string);
 
     CTFontRef fontRef = CTFontCreateWithName((CFStringRef)[_font fontName],
                                              [_font pointSize],
                                              &CGAffineTransformIdentity);
     CFAttributedStringSetAttribute((CFMutableAttributedStringRef)_attributeString,
-                                   CFRangeMake(0, [_text length]),
+                                   CFRangeMake(0, [_attributeString.string length]),
                                    kCTFontAttributeName,
                                    fontRef);
     CFRelease(fontRef);
     
     CFAttributedStringSetAttribute((CFMutableAttributedStringRef)_attributeString,
-                                   CFRangeMake(0, [_text length]),
+                                   CFRangeMake(0, [_attributeString.string length]),
                                    kCTForegroundColorAttributeName,
                                    _fontColor.CGColor);
     
@@ -76,7 +76,7 @@ NSMutableAttributedString *replacementAttrString(){
     CTParagraphStyleSetting settings[] = {lineBreakStyle, alignmentStyle, lineSpaceStyle};
     CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(settings, 3);
     CFAttributedStringSetAttribute((CFMutableAttributedStringRef)_attributeString,
-                                   CFRangeMake(0, [self.text length]),
+                                   CFRangeMake(0, [_attributeString.string length]),
                                    kCTParagraphStyleAttributeName,
                                    paragraphStyle);
     CFRelease(paragraphStyle);
@@ -103,7 +103,7 @@ NSMutableAttributedString *replacementAttrString(){
     NSDictionary *attr = @{(NSString *)kCTRunDelegateAttributeName : (__bridge id)delegate,};
     [_attributeString insertAttributedString:replacementAttrString() atIndex:position];
     
-    NSMutableString *temp = [NSMutableString stringWithString:_text];
+    NSMutableString *temp = [NSMutableString stringWithString:_attributeString.string];
     [temp insertString:replacementAttrString().string atIndex:position];
     _text = [temp copy];
     
@@ -183,7 +183,7 @@ NSMutableAttributedString *replacementAttrString(){
     NSDictionary *attr = @{(NSString *)kCTRunDelegateAttributeName : (__bridge id)delegate,};
     [_attributeString insertAttributedString:replacementAttrString() atIndex:[[args valueForKey:@"position"] integerValue]];
     
-    NSMutableString *temp = [NSMutableString stringWithString:_text];
+    NSMutableString *temp = [NSMutableString stringWithString:_attributeString.string];
     [temp insertString:replacementAttrString().string atIndex:[[args valueForKey:@"position"] integerValue]];
     _text = [temp copy];
     
@@ -219,7 +219,7 @@ NSMutableAttributedString *replacementAttrString(){
                                        _telLinkColor.CGColor);
         
         MXLinkNode *node = [[MXLinkNode alloc] initWithRange:result.range
-                                                     content:[_text substringWithRange:result.range]
+                                                     content:[_attributeString.string substringWithRange:result.range]
                                                         type:telLink];
         [_links addObject:node];
 
