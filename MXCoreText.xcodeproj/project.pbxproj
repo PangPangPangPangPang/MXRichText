@@ -15,12 +15,7 @@
 		505284CB1C883DC800B4B426 /* MXAttachmentNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 505284CA1C883DC800B4B426 /* MXAttachmentNode.m */; };
 		505284CE1C88413600B4B426 /* MXEmojiNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 505284CD1C88413600B4B426 /* MXEmojiNode.m */; };
 		505284DA1C8846E600B4B426 /* EmojiList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505284D91C8846E600B4B426 /* EmojiList.plist */; };
-		505284F61C8A68D700B4B426 /* android.png in Resources */ = {isa = PBXBuildFile; fileRef = 505284F11C8A68D700B4B426 /* android.png */; };
-		505284F71C8A68D700B4B426 /* emo_im_crying.png in Resources */ = {isa = PBXBuildFile; fileRef = 505284F21C8A68D700B4B426 /* emo_im_crying.png */; };
-		505284F81C8A68D700B4B426 /* emo_im_cool.png in Resources */ = {isa = PBXBuildFile; fileRef = 505284F31C8A68D700B4B426 /* emo_im_cool.png */; };
-		505284F91C8A68D700B4B426 /* emo_im_tongue_sticking_out.png in Resources */ = {isa = PBXBuildFile; fileRef = 505284F41C8A68D700B4B426 /* emo_im_tongue_sticking_out.png */; };
-		505284FA1C8A68D700B4B426 /* emo_im_angel.png in Resources */ = {isa = PBXBuildFile; fileRef = 505284F51C8A68D700B4B426 /* emo_im_angel.png */; };
-		505284FC1C8A690100B4B426 /* DSC_3840.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 505284FB1C8A690100B4B426 /* DSC_3840.jpg */; };
+		505285001C8D1BCF00B4B426 /* Emoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 505284FF1C8D1BCF00B4B426 /* Emoji.xcassets */; };
 		5058EE671C3BC604002751DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5058EE661C3BC604002751DB /* main.m */; };
 		5058EE6A1C3BC604002751DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5058EE691C3BC604002751DB /* AppDelegate.m */; };
 		5058EE6D1C3BC604002751DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5058EE6C1C3BC604002751DB /* ViewController.m */; };
@@ -49,12 +44,7 @@
 		505284CC1C88413600B4B426 /* MXEmojiNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXEmojiNode.h; sourceTree = "<group>"; };
 		505284CD1C88413600B4B426 /* MXEmojiNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXEmojiNode.m; sourceTree = "<group>"; };
 		505284D91C8846E600B4B426 /* EmojiList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmojiList.plist; sourceTree = "<group>"; };
-		505284F11C8A68D700B4B426 /* android.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = android.png; sourceTree = "<group>"; };
-		505284F21C8A68D700B4B426 /* emo_im_crying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emo_im_crying.png; sourceTree = "<group>"; };
-		505284F31C8A68D700B4B426 /* emo_im_cool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emo_im_cool.png; sourceTree = "<group>"; };
-		505284F41C8A68D700B4B426 /* emo_im_tongue_sticking_out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emo_im_tongue_sticking_out.png; sourceTree = "<group>"; };
-		505284F51C8A68D700B4B426 /* emo_im_angel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emo_im_angel.png; sourceTree = "<group>"; };
-		505284FB1C8A690100B4B426 /* DSC_3840.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC_3840.jpg; sourceTree = "<group>"; };
+		505284FF1C8D1BCF00B4B426 /* Emoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Emoji.xcassets; sourceTree = "<group>"; };
 		5058EE621C3BC604002751DB /* MXCoreText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXCoreText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5058EE661C3BC604002751DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5058EE681C3BC604002751DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,12 +94,6 @@
 		5058EE641C3BC604002751DB /* MXCoreText */ = {
 			isa = PBXGroup;
 			children = (
-				505284FB1C8A690100B4B426 /* DSC_3840.jpg */,
-				505284F11C8A68D700B4B426 /* android.png */,
-				505284F21C8A68D700B4B426 /* emo_im_crying.png */,
-				505284F31C8A68D700B4B426 /* emo_im_cool.png */,
-				505284F41C8A68D700B4B426 /* emo_im_tongue_sticking_out.png */,
-				505284F51C8A68D700B4B426 /* emo_im_angel.png */,
 				5058EE681C3BC604002751DB /* AppDelegate.h */,
 				5058EE691C3BC604002751DB /* AppDelegate.m */,
 				5058EE6B1C3BC604002751DB /* ViewController.h */,
@@ -146,6 +130,7 @@
 		5058EE651C3BC604002751DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				505284FF1C8D1BCF00B4B426 /* Emoji.xcassets */,
 				5058EE661C3BC604002751DB /* main.m */,
 			);
 			name = "Supporting Files";
@@ -208,13 +193,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				505284F81C8A68D700B4B426 /* emo_im_cool.png in Resources */,
-				505284FC1C8A690100B4B426 /* DSC_3840.jpg in Resources */,
-				505284F71C8A68D700B4B426 /* emo_im_crying.png in Resources */,
-				505284F61C8A68D700B4B426 /* android.png in Resources */,
-				505284F91C8A68D700B4B426 /* emo_im_tongue_sticking_out.png in Resources */,
+				505285001C8D1BCF00B4B426 /* Emoji.xcassets in Resources */,
 				5058EE751C3BC604002751DB /* LaunchScreen.storyboard in Resources */,
-				505284FA1C8A68D700B4B426 /* emo_im_angel.png in Resources */,
 				5058EE721C3BC604002751DB /* Assets.xcassets in Resources */,
 				505284DA1C8846E600B4B426 /* EmojiList.plist in Resources */,
 				5058EE701C3BC604002751DB /* Main.storyboard in Resources */,
