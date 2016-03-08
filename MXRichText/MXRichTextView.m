@@ -22,6 +22,20 @@ NSMutableAttributedString *replacementAttrString(){
     return replacementAttrString;
 }
 
+CTTextAlignment transferTextAlignment(NSTextAlignment alignment) {
+    switch (alignment) {
+        case NSTextAlignmentCenter:
+            return kCTTextAlignmentRight;
+            break;
+        case NSTextAlignmentRight:
+            return kCTTextAlignmentCenter;
+            break;
+        default:
+            return (CTTextAlignment)alignment;
+            break;
+    }
+}
+
 @implementation MXRichTextView {
     CTFrameRef        _frame;
     NSMutableArray   *_nodes;
@@ -61,7 +75,7 @@ NSMutableAttributedString *replacementAttrString(){
     lineBreakStyle.value = &lineBreak;
     lineBreakStyle.valueSize = sizeof(CTLineBreakMode);
     
-    CTTextAlignment alignment = (CTTextAlignment)_textAlignment;
+    CTTextAlignment alignment = transferTextAlignment(_textAlignment);
     
     CTParagraphStyleSetting alignmentStyle;
     alignmentStyle.spec = kCTParagraphStyleSpecifierAlignment;
@@ -290,7 +304,10 @@ NSMutableAttributedString *replacementAttrString(){
                     [view addTarget:self
                              action:@selector(onTapLink:)
                    forControlEvents:UIControlEventTouchUpInside];
-                    [view setFrame:CGRectMake(originX, self.frame.size.height - lineOrigin.y - lineAscent - _ascent + ascent, width, ascent + descent)];
+                    [view setFrame:CGRectMake(originX,
+                                              self.frame.size.height - lineOrigin.y - lineAscent - _ascent + ascent,
+                                              width,
+                                              ascent + descent)];
                     [self addSubview:view];
                     
                 }

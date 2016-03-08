@@ -24,6 +24,7 @@
     view1 = [MXRichTextView new];
     [view1.layer setBorderWidth:0.5];
     [view1 setBackgroundColor:[UIColor yellowColor]];
+    [view1 setTextAlignment:NSTextAlignmentRight];
     view1.numberOfLines = 5;
     [view1.layer setBorderColor:[UIColor grayColor].CGColor];
     [view1 setFrame:CGRectMake(10, 100, self.view.frame.size.width - 20, 400)];
@@ -33,7 +34,7 @@
     view1.delegate = self;
     [self.view addSubview:view1];
     
-    [view1 setText:@"哈哈哈哈啊四六级的飞教伐啦发[微笑]卡斯加发的啦丽景撒旦教伐啦发[舌头]卡斯加洒龙卷哈哈哈哈啊四六级的飞洒龙卷风的拉萨积分卡洛斯的疯狂撒了积分哈哈哈哈啊四六级的飞[酷]洒龙卷风的拉萨积分卡洛斯的疯狂撒了积分[哭泣]风的拉萨积分卡件[嘻嘻]莱卡即可水电费13269178024啥都可夫斯基额外13348695打飞机道哈"];
+    [view1 setText:@"哈哈哈哈啊四\n六级的飞教伐啦发[微笑]卡斯加发的啦丽景撒旦教伐啦发[舌头]卡斯加洒龙卷哈哈哈哈啊四六级的飞洒龙卷风的拉萨积分卡洛斯的疯狂撒了积分哈哈哈哈啊四六级的飞[酷]洒龙卷风的拉萨积分卡洛斯的疯狂撒了积分[哭泣]风的拉萨积分卡件[嘻嘻]莱卡即可水电费13269178024啥都可夫斯基额外13348695打飞机道哈"];
 
     UILabel *view2 = [UILabel new];
     [view2 setTextColor:[UIColor whiteColor]];
